@@ -2,6 +2,7 @@ const express = require("express");
 const { default: puppeteer } = require("puppeteer");
 const app = express();
 const https = require("https");
+const cors = require("cors");
 
 require("dotenv").config();
 app.use(cors());
@@ -11,7 +12,7 @@ const BASE_HOSTNAME = "storage.bunnycdn.com";
 const HOSTNAME = REGION ? `${REGION}.${BASE_HOSTNAME}` : BASE_HOSTNAME;
 const STORAGE_ZONE_NAME = "hedonova-files";
 
-const ACCESS_KEY = "9ef1942c-c7bb-46c5-a597fbb3f31b-3b90-4e0f";
+const ACCESS_KEY = process.env.ACCESS_KEY_BUNNY;
 
 // const uploadFile = async () => {
 //   const readStream = fs.createReadStream(FILE_PATH);
