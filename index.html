@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #1c2022;
+        padding: 40px;
+        width: 595px;
+        color: #ffffff;
+        font-family: "GT Walsheim Pro";
+      }
+      .coinvestment-heading {
+        color: #ffffff;
+        font-size: 36px;
+        margin-top: 15px;
+      }
+      .line {
+        width: 100%;
+        height: 4px;
+        background-color: #ffffff;
+        margin-top: 30px;
+      }
+      .details {
+        display: flex;
+        margin-top: 30px;
+      }
+      .details-left,
+      .details-right {
+        flex: 6;
+      }
+      .details-center {
+        flex: 1;
+      }
+      .details h6 {
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .details p {
+        font-size: 10px;
+        font-weight: 300;
+        color: #ffffffb3;
+      }
+
+      .address {
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 5px;
+      }
+      .details-transaction {
+      }
+      .details-address .single-row,
+      .details-transaction .single-row {
+        display: flex;
+      }
+      .single-row p {
+        margin: 2px;
+      }
+      .single-row .field {
+        flex: 6;
+      }
+      .single-row .value {
+        flex: 6;
+        line-height: 1.6;
+      }
+      .single-row .colon {
+        flex: 1;
+      }
+      .contract-note {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+      }
+      .contract-note h6 {
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        text-wrap: nowrap;
+      }
+      .contract-note span {
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-left: 1rem;
+      }
+      .contract-sentence {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 15px;
+      }
+      .summary {
+        margin-top: 40px;
+      }
+      .summary h6 {
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .summary table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .summary tr:first-child {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      th div,
+      td div {
+        padding: 10px 15px;
+
+        font-size: 10px;
+        text-align: left;
+      }
+      td div {
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .summary th,
+      .summary td {
+        font-size: 10px;
+        text-align: left;
+      }
+      .disclaimer {
+        margin-top: 40px;
+      }
+      .disclaimer h6 {
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .disclaimer ul {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 10px;
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      footer {
+        margin-top: 100px;
+      }
+      footer h6 {
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+      .footer-details {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-details p {
+        font-size: 10px;
+        font-weight: 500;
+        color: #959595;
+        line-height: normal;
+      }
+
+      .footer-details p span {
+        color: #ffffff;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://hedonova.b-cdn.net/coinvestment/email-assets/font/stylesheet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img
+          src="https://hedonova.b-cdn.net/coinvestment/email-assets/hedonova-logo.svg"
+          alt="hedonova logo"
+          width="140px"
+          height="40px"
+        />
+        <h1 class="coinvestment-heading">{%COINVESTMENT_NAME%}</h1>
+      </div>
+    </header>
+    <div class="line"></div>
+    <div class="details">
+      <div class="details-left">
+        <div class="details-address">
+          <h6>Account holder details</h6>
+          <div class="address">
+            <div class="single-row">
+              <p class="field">Name</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_NAME%}</p>
+            </div>
+
+            <div class="single-row">
+              <p class="field">Address line 1</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_ADDRESS_LINEONE%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">Address line 2</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_ADDRESS_LINETWO%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">City</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_CITY%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">State</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_STATE%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">Zipcode</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_ZIPCODE%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">Country</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_COUNTRY%}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="details-center"></div>
+      <div class="details-right">
+        <div class="details-transaction">
+          <h6>Transaction details</h6>
+          <div class="address">
+            <div class="single-row">
+              <p class="field">Hedonova client ID</p>
+              <p class="colon">:</p>
+              <p class="value">{%CLIENT_ACCOUNT%}</p>
+            </div>
+
+            <div class="single-row">
+              <p class="field">Reference ID</p>
+              <p class="colon">:</p>
+              <p class="value">{%T_REFERENCE_ID%}</p>
+            </div>
+            <div class="single-row">
+              <p class="field">Issue date</p>
+              <p class="colon">:</p>
+              <p class="value">{%T_DATE%}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contract-note">
+      <h6>Contract note</h6>
+      <span></span>
+    </div>
+    <h3 class="contract-sentence">
+      We are pleased to confirm the following transaction.
+    </h3>
+    <div class="summary">
+      <h6>Activity summary</h6>
+      <table>
+        <tr>
+          <th><div>Date</div></th>
+          <th><div>Type</div></th>
+          <th><div>Amount</div></th>
+          <th><div>Source</div></th>
+        </tr>
+        <tr>
+          <td><div>{%T_DATE%}</div></td>
+          <td><div>{%T_TYPE%}</div></td>
+          <td><div>{%T_AMOUNT%}</div></td>
+          <td><div>{%T_SOURCE%}</div></td>
+        </tr>
+      </table>
+    </div>
+    <div class="disclaimer">
+      <h6>Disclaimer:</h6>
+      <ul>
+        <li>
+          Any errors or omissions on this confirmation should be communicated to
+          us within five working days.
+        </li>
+        <li>This confirmation does not require a signature.</li>
+        <li>
+          The above amounts are unaudited and are not to be used for income tax
+          purposes.
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <h6>Hedonova LLC</h6>
+      <div class="footer-details">
+        <p>US Bank Tower, 633 West Fifth Street Los Angeles, CA 90071</p>
+        <p>Phone : <span>+1 (213) 340-1334</span></p>
+        <p>Email : <span>hello@hedonova.io</span></p>
+      </div>
+    </footer>
+  </body>
+</html>
