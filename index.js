@@ -153,6 +153,8 @@ app.post("/create-contract-note", async (req, res) => {
         amount: req.body.transaction.amount,
         source: req.body.transaction.source,
         referenceID: req.body.transaction.referenceID,
+        lots: req.body.transaction.lots,
+        sourceID: req.body.transaction.sourceID,
       },
       coinvestment_name: req.body.coinvestment_name,
     };

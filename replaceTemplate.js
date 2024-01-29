@@ -19,6 +19,7 @@ module.exports = (temp, detail) => {
   output = output.replace(/{%T_TYPE%}/g, detail.transaction.type);
   output = output.replace(/{%T_AMOUNT%}/g, detail.transaction.amount);
   output = output.replace(/{%T_SOURCE%}/g, detail.transaction.source);
+  output = output.replace(/{%T_LOTS%}/g, detail.transaction.lots);
 
   return output;
 };
