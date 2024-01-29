@@ -23,9 +23,9 @@ const STORAGE_ZONE_NAME = "hedonova-files";
 
 const ACCESS_KEY = process.env.ACCESS_KEY_BUNNY;
 
-const uploadFile = async (pdfContent, res) => {
+const uploadFile = async (pdfContent, reqOuter, res) => {
   const FILENAME_TO_UPLOAD = `Contract-Note-${
-    req.body.transaction.referenceID
+    reqOuter.body.transaction.referenceID
   }-${Date.now()}.pdf`;
   const options = {
     method: "PUT",
@@ -176,7 +176,7 @@ app.post("/create-contract-note", async (req, res) => {
       format: "A4",
     });
     await browser.close();
-    uploadFile(pdf, res);
+    uploadFile(pdf, req, res);
     // res.json({
     //   status: "success",
 
