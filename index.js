@@ -24,7 +24,9 @@ const STORAGE_ZONE_NAME = "hedonova-files";
 const ACCESS_KEY = process.env.ACCESS_KEY_BUNNY;
 
 const uploadFile = async (pdfContent, res) => {
-  const FILENAME_TO_UPLOAD = `Coinvestment_contract_note_${Date.now()}.pdf`;
+  const FILENAME_TO_UPLOAD = `Contract-Note-${
+    req.body.transaction.referenceID
+  }-${Date.now()}.pdf`;
   const options = {
     method: "PUT",
     host: HOSTNAME,
