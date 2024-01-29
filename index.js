@@ -89,8 +89,8 @@ app.post("/create-contract-note", async (req, res) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: "metaelango@gmail.com",
-          password: "hedonova",
+          email: process.env.EMAIL,
+          password: process.env.PASSWORD,
         }),
       }
     );
