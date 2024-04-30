@@ -184,6 +184,7 @@ app.post("/create-contract-note", async (req, res) => {
     //   pdfDetails,
     // });
   } catch (error) {
+    console.log(error);
     res.json({
       status: "Failed",
       error,
